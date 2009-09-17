@@ -5,6 +5,7 @@ RAILS_GEM_VERSION = '2.3.2' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
+require 'bj'
 
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here.
@@ -22,6 +23,7 @@ Rails::Initializer.run do |config|
   config.gem "claudiob-radiotagmap", :version => '0.0.4', 
                                      :source => "http://gems.github.com",
                                      :lib => 'radiotagmap'
+  config.gem "bj", :version => '1.0.1'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
