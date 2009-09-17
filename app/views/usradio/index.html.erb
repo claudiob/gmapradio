@@ -1,0 +1,38 @@
+<!-- Begin layout -->
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>map</title>
+  <%= stylesheet_link_tag 'default' %>
+  <%= javascript_include_tag :defaults %>
+</head>
+<body>
+<!-- End layout -->
+
+<% if @api_key.nil? %>
+
+API key not valid.
+
+<% else %>
+
+<div id="map"></div>
+
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=<%= @api_key %>" type="text/javascript"></script>
+
+<script type="text/javascript">
+  if (GBrowserIsCompatible()) {
+    var map = new GMap2(document.getElementById("map"));
+  	map.setCenter(new GLatLng(37,-102),4);
+  	map.setMapType(new GMapType([G_NORMAL_MAP.getTileLayers()[0]], G_NORMAL_MAP.getProjection(), "test", {}));
+    var kmlPath = "http://<%= request.host_with_port %>/kml/overlay.kml"
+    var geoXml = new GGeoXml(kmlPath);
+  	map.addOverlay(geoXml);
+  }
+</script>      
+
+<%= periodically_call_remote(:url => {:action => 'update'}, :frequency => 30)%>
+
+<% end %>
+
+</body>
+</html>

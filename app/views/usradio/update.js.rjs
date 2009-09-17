@@ -1,0 +1,4 @@
+#page << "map.removeOverlay(geoXml);"
+page << "var geoXml = new GGeoXml(kmlPath + '?id=#{Time.now.usec.to_s}');"
+page << "map.clearOverlays();"
+page << "map.addOverlay(geoXml);"
