@@ -9,7 +9,7 @@ puts "Loading radiotagmap process (#{command})"
 # To prevent pending processes from queueing, clear every pending job
 begin
   ActiveRecord::Base.connection.execute("delete from bj_job;")
-  Bj.submit "ruby -r rubygems -e \"require 'radiotagmap'; #{command};\""
+  Bj.submit "ruby -r rubygems -e \"require 'radiotagmap'; #{command};\" > #{RAILS_ROOT}/log/radiotagmap.log 2>&1"
 rescue ActiveRecord::StatementInvalid # In case the table does not yet exist
 end
 
