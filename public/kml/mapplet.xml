@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Module>
-<ModulePrefs title="Yes.com Country radio stations" height="300">
+<ModulePrefs title="Yes.com Country radio stations" directory_title="Real-time radio genres" description="Highlight states where FM radios are playing Country music" author="Claudio B" author_email="claudiob@gmail.com" height="300" title_url="http://github.com/claudiob/radiotagmap" author_link="http://claudiob.github.com">
   <Require feature="sharedmap"/>
 </ModulePrefs>
 <Content type="html"><![CDATA[
 
 <small>
 The map shows the ratio of FM radios that are currently broadcasting Country music in each U.S. state.
-The more intense the color, the more the FM stations playing a country song.
+The more intense the red color, the more the FM stations playing a country song.
 Broadcasting data is retrieved in real time from <a href="http://www.yes.com">Yes.com</a>.
 </small>
 
