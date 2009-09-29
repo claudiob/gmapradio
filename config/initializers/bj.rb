@@ -3,7 +3,7 @@
 # indicative of the most played genre/tag by its FM radios in that moment
 
 kml_path = "kml/overlay.kml" # TODO: DRY this, also used in views/usradio/index
-command = "Radiotagmap::update_kml '#{RAILS_ROOT}/public/#{kml_path}', [['Pop']]" # Add forever, tags
+command = "Radiotagmap::update_kml '#{RAILS_ROOT}/public/#{kml_path}', [['Country','Folk','Alt-Country','Americana','Folk Rock']]" # Add forever, tags
 puts "Loading radiotagmap process (#{command})"
 
 # To prevent pending processes from queueing, clear every pending job
