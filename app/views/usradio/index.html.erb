@@ -30,7 +30,7 @@ API key not valid.
   }
 </script>      
 
-<%= periodically_call_remote(:url => {:action => 'update'}, :frequency => 30)%>
+<%= periodically_call_remote(:url => {:controller => 'usradio', :action => 'update'}, :frequency => 30)%>
 
 <% end %>
 
