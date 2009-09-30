@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+<ModulePrefs title="Yes.com Country radio stations" directory_title="Real-time radio genres" description="Highlight states where FM radios are playing Country music" author="Claudio B" author_email="claudiob@gmail.com" height="300" title_url="http://github.com/claudiob/radiotagmap" author_link="http://claudiob.github.com">
+  <Require feature="sharedmap"/>
+</ModulePrefs>
+<Content type="html"><![CDATA[
+
+<small>
+The map shows the ratio of FM radios that are currently broadcasting Country music in each U.S. state.
+The more intense the red color, the more the FM stations playing a country song.
+Broadcasting data is retrieved in real time from <a href="http://www.yes.com">Yes.com</a>.
+</small>
+
+<script>
+var map = new GMap2();
+map.setCenter(new GLatLng(37,-102),4);
+
+function add(kml) {
+  map.addOverlay(kml);
+  window.setTimeout(function() {
+    map.removeOverlay(kml);
+    add(kml);}, 30000);  
+}
+
+var geoXml = new GGeoXml("http://gmapradio.baccigalupo.com/kml/overlay.kml?id=<%=Time.now.usec.to_s%>");
+add(geoXml);
+</script>
+
+]]></Content>
+</Module>
