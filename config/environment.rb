@@ -20,9 +20,9 @@ Rails::Initializer.run do |config|
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
-  config.gem "claudiob-radiotagmap", :version => '0.0.7', 
-                                     :source => "http://gems.github.com",
-                                     :lib => 'radiotagmap'
+  config.gem "radiotagmap", :version => '0.0.8', 
+                            :source => "http://gemcutter.org/",
+                            :lib => 'radiotagmap'
   config.gem "bj", :version => '1.0.1'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
