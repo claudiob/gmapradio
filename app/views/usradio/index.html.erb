@@ -24,7 +24,7 @@ API key not valid.
     var map = new GMap2(document.getElementById("map"));
   	map.setCenter(new GLatLng(37,-102),4);
   	map.setMapType(new GMapType([G_NORMAL_MAP.getTileLayers()[0]], G_NORMAL_MAP.getProjection(), "test", {}));
-    var kmlPath = "http://<%= request.host_with_port %>/kml/overlay.kml"
+    var kmlPath = "http://<%= request.host_with_port %>/kml/overlay.kml";
     var geoXml = new GGeoXml(kmlPath);
   	map.addOverlay(geoXml);
   }
